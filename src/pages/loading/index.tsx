@@ -19,8 +19,8 @@ const LoadingScreen = (props: LoadingProps) => {
     return (
         <Page name="loading">
             <div className='loading-container'>
-                <img src='../../assets/stormguard_logo.svg' alt={"stormguard logo"}/>
-                <h1>StormGuard</h1>
+                <img src='../../assets/stormguard_logo.svg' height={100} width={100} alt={"stormguard logo"} loading={"lazy"}/>
+                <h2>StormGuard</h2>
             </div>
         </Page>
     );

@@ -1,6 +1,6 @@
 import { Block, Button, Icon } from "framework7-react";
 
-import './style.module.css';
+import './style.css';
 import { useState } from "react";
 
 type SearchBarProps = {

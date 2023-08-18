@@ -7,8 +7,8 @@ import WeatherModel from "../../domain/WeatherModel";
 
 export default class LocalStorage implements IStorage {
 
-    private readonly KEY_WEATHERS = 'KEY_WEATHERS';
-    private readonly KEY_CURRENT_IDX = `KEY_CURRENT_IDX`;
+    private readonly KEY_WEATHERS: string = 'KEY_WEATHERS';
+    private readonly KEY_CURRENT_IDX: string = `KEY_CURRENT_IDX`;
 
     constructor() { }
 
@@ -25,8 +25,8 @@ export default class LocalStorage implements IStorage {
     }
 
     async saveWeathersAsync(list: IWeatherModel[]): Promise<void> {
-        const weathersRaw = list.map(item => item.getRawData());
-        const weathersStringified = JSON.stringify(weathersRaw);
+        const weathersRaw = list.map((item: IWeatherModel) => item.getRawData());
+        const weathersStringified:string = JSON.stringify(weathersRaw);
         await Preferences.set({
             key: this.KEY_WEATHERS,
             value: weathersStringified
@@ -35,7 +35,7 @@ export default class LocalStorage implements IStorage {
 
     async loadWeathersAsync(): Promise<IWeatherModel[]> {
         let result: IWeatherModel[] = [];
-        const { value } = await Preferences.get({ key: this.KEY_WEATHERS });
+        const { value}: {value: string | null} = await Preferences.get({ key: this.KEY_WEATHERS });
         const weathersRaw: [] = value !== null && value?.length > 0 ? JSON.parse(value as string) : [];
         result = weathersRaw.map(weather => new WeatherModel(weather));
 

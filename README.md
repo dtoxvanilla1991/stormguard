@@ -113,6 +113,7 @@ Rename `environment` file to `.env` , and set the API key for the OpenWeatherMap
 * Geolocation handling
 * Data Storage
 * A11y features (semantic HTML structure, ARIA attributes, ATL tags etc.)
+* Various optimizations (lazy loading, code splitting, tree shaking, etc.)
 * Offline First
 
 ## Ideas for Future Features

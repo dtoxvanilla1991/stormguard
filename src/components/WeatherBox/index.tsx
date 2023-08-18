@@ -1,7 +1,7 @@
 import { Block, Button, Icon } from "framework7-react";
 import WeatherModel from "../../domain/WeatherModel";
 
-import './style.module.css';
+import './style.css';
 
 type WeatherBoxProps = {
     model: WeatherModel;
@@ -17,7 +17,7 @@ const WeatherBox = ({ model, onSearchClick }: WeatherBoxProps) => {
                 {model?.getName()}
             </span>
             <div className='weather-box-temp-wrapper'>
-                <img src={model?.getIcon()} alt={"weather icon"}/>
+                <img src={model?.getIcon()} alt={"weather icon"} loading={"lazy"}/>
                 <span>{model?.getTemperatureWithSymbol()}</span>
             </div>
             <span>{model?.getDescription()}</span>

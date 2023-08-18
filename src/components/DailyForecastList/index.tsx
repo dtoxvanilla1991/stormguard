@@ -1,7 +1,7 @@
 import { Button, List, ListItem } from "framework7-react";
 import IWeatherModel from "../../domain/IWeatherModel";
 
-import './style.module.css';
+import './style.css';
 
 type DailyForecastListProps = {
     forecastList: IWeatherModel[];
@@ -24,7 +24,7 @@ const DailyForecastList = ({ forecastList, onItemClick }: DailyForecastListProps
                                 <span>{forecast.getFormatedDay()}</span>
                                 <div className="forecast-item-temp-wrapper">
                                     <span>{formatMinMaxTemp(forecast)} °C</span>
-                                    <img className="forecast-temp-icon" src={forecast.getIcon()} />
+                                    <img className="forecast-temp-icon" src={forecast.getIcon()} alt={"forecast temporary icon"} loading={"lazy"}/>
                                 </div>
                             </Button>
                         </ListItem>

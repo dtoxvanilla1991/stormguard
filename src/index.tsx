@@ -4,7 +4,7 @@ import Framework7 from 'framework7/lite/bundle';
 import Framework7React, { f7ready, f7 } from 'framework7-react';
 import 'framework7/css/bundle';
 import './css/icons.css';
-import './style.module.css';
+import './style.css';
 
 import App from './app';
 

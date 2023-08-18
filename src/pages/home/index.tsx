@@ -9,7 +9,7 @@ import DailyForecastList from '../../components/DailyForecastList';
 import ForecastDetail from '../../components/ForecastDetail';
 import WeatherBox from '../../components/WeatherBox';
 import { getSafeAreaClass } from '../../utils/f7utils';
-import './style.module.css';
+import './style.css';
 import useHomePageLogic from './useHomePageLogic';
 
 type HomePageProps = {

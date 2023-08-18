@@ -1,7 +1,7 @@
 import { Block, List, ListItem } from "framework7-react";
 import IWeatherModel from "../../domain/IWeatherModel";
 
-import './style.module.css';
+import './style.css';
 
 type ForecastDetailProps = {
     forecast: IWeatherModel;
@@ -12,7 +12,7 @@ const ForecastDetail = ({ forecast }: ForecastDetailProps) => {
     return (
         <>
             <Block strong inset className="description">
-                <img src={forecast?.getIcon()} />
+                <img src={forecast?.getIcon()} alt={"forecast weather icon"} loading={"lazy"}/>
                 <span>{forecast?.getDescription()}</span>
             </Block>
 

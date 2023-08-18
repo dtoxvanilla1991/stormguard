@@ -47,7 +47,7 @@ export default class OpenWeatherApi implements WeatherApi {
     }
 
     async byGeolocation(lat: number, lon: number): Promise<any> {
-
+console.log(lat, lon)
         if(this.API_KEY === undefined) throw new Error('API KEY is undefined. Please provide it in .env file');
 
 

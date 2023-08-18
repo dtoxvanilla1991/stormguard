@@ -7,11 +7,11 @@ import { TypeLocation } from './types';
 import IStorage from './device/storage/IStorage';
 import LocalStorage from './device/storage/LocalStorage';
 
-const sliceName = 'weathers';
+const sliceName: string = 'weathers';
 
 // The API needs to be injected by a dependency injection mechanism
 const weatherApi: WeatherApi = new OpenWeatherApi(config.weatherApiKey);
-console.log(config)
+
 // The local storage needs to be injected by a dependency injection mechanism
 const localStorage: IStorage = new LocalStorage();
 
