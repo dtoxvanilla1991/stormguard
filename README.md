@@ -53,6 +53,7 @@ Frameworks/libraries/languages used:
 - [Node.js](https://nodejs.org/en/)
 - [Framework7](https://framework7.io/react)
 - [Capacitor](https://capacitorjs.com/)
+- [Redux store and toolkit](https://redux.js.org/); (meh, could have used Context API too)
 - [OpenWeatherMap API](https://openweathermap.org/api)
 
 
@@ -70,6 +71,10 @@ To run the app, install it locally using npm in your terminal:
 
 ```
 npm i
+```
+or
+```
+yarn
 ```
 
 ## NPM Scripts
@@ -91,6 +96,36 @@ This project created with Capacitor support. And first thing required before sta
 ```
 npx cap add android && npx cap add ios
 ```
+
+## APIs
+
+Rename `environment` file to `.env` , and set the API key for the OpenWeatherMap API (you will need to register and sub).
+
+/data/2.5/weather - To fetch the current weather
+
+/data/3.0/onecall - To fetch the daily forecast
+
+## Implemented Features
+
+* City Input
+* Current Weather
+* Weather Forecast
+* Geolocation handling
+* Data Storage
+* A11y features (semantic HTML structure, ARIA attributes, ATL tags etc.)
+* Offline First
+
+## Ideas for Future Features
+
+* Add Storybook for better component development;
+* CI/CD using Github Actions;
+* Add unit tests using Jest, including edge cases;
+* Add e2e tests using Cypress and Argos Screenshots;
+* Add more graceful and "smart" error handling, providing the user with more information about the error and the development team with more information about the error;
+* Protect API keys with proxy endpoints, implemented between the OpenWeatherMap API and the app;
+* Using dependency injection for better code scalability & testability;
+* Logging & monitoring using FullStory;
+* Crash/Error reports using Sentry;
 
 Check out [official Capacitor documentation](https://capacitorjs.com) for more examples and usage examples.
 

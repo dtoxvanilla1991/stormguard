@@ -1,6 +1,6 @@
 import { TypeLocation } from "../types";
 import { useAppDispatch, useAppSelector } from "./useStore";
-import { fetchWeather } from "../features/weatherSlice";
+import { fetchWeather } from "../weatherSlice";
 
 const useFetchWeather = () => {
 

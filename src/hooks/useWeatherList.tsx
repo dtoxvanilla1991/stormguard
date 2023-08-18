@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "./useStore";
-import { loadLocalWeathers } from "../features/weatherSlice";
+import { loadLocalWeathers } from "../weatherSlice";
 import WeatherModel from "../domain/WeatherModel";
 
 

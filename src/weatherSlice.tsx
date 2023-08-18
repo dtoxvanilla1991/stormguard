@@ -1,11 +1,11 @@
 
 import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import WeatherModel from '../domain/WeatherModel';
-import OpenWeatherApi, { WeatherApi } from '../api';
-import config from '../config';
-import { TypeLocation } from '../types';
-import IStorage from '../device/storage/IStorage';
-import LocalStorage from '../device/storage/LocalStorage';
+import WeatherModel from './domain/WeatherModel';
+import OpenWeatherApi, { WeatherApi } from './api';
+import config from './config';
+import { TypeLocation } from './types';
+import IStorage from './device/storage/IStorage';
+import LocalStorage from './device/storage/LocalStorage';
 
 const sliceName = 'weathers';
 
