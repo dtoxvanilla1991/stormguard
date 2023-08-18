@@ -11,6 +11,8 @@ import WeatherBox from '../../components/WeatherBox';
 import { getSafeAreaClass } from '../../utils/f7utils';
 import './style.css';
 import useHomePageLogic from './useHomePageLogic';
+import WeatherModel from "../../domain/WeatherModel";
+import IWeatherModel from "../../domain/IWeatherModel";
 
 type HomePageProps = {
     f7route: any;
@@ -19,6 +21,18 @@ type HomePageProps = {
 
 const HomePage = (props: HomePageProps) => {
     const { f7router } = props;
+
+    interface HomePageLogic {
+        weather: WeatherModel |undefined,
+            dailyList: IWeatherModel[],
+            selectedForecast: IWeatherModel | undefined,
+            sheetOpen: boolean,
+            handleSheetClosed: () => void,
+            handleSearchClick: () => any,
+            handleForecastClick: (idx:number) => void,
+
+
+    }
 
     const {
         weather,
@@ -29,7 +43,7 @@ const HomePage = (props: HomePageProps) => {
         handleSearchClick,
         handleForecastClick,
 
-    } = useHomePageLogic(f7router);
+    }: HomePageLogic = useHomePageLogic(f7router);
 
     return (
         <Page name="home">
