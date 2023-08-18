@@ -3,7 +3,7 @@
   "appName": "StormGuard",
   "bundledWebRuntime": false,
   "npmClient": "npm",
-  "webDir": "dist",
+  "webDir": "www",
   "plugins": {
     "SplashScreen": {
       "launchShowDuration": 0

@@ -1,7 +1,7 @@
 import { Block, Button, Icon } from "framework7-react";
 import WeatherModel from "../../domain/WeatherModel";
 
-import './style.scss';
+import './style.module.css';
 
 type WeatherBoxProps = {
     model: WeatherModel;

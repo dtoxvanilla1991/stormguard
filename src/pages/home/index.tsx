@@ -1,74 +1,78 @@
-import React from 'react';
 import {
-  Page,
-  Navbar,
-  NavLeft,
-  NavTitle,
-  NavTitleLarge,
-  NavRight,
-  Link,
-  Toolbar,
-  Block,
-  BlockTitle,
-  List,
-  ListItem,
-  Button
+    BlockTitle,
+    Icon,
+    Link,
+    Page, PageContent, Sheet, Toolbar
 } from 'framework7-react';
 
-const HomePage = () => (
-  <Page name="home">
-    {/* Top Navbar */}
-    <Navbar large sliding={false}>
-      <NavLeft>
-        <Link iconIos="f7:menu" iconMd="material:menu" panelOpen="left" />
-      </NavLeft>
-      <NavTitle sliding>StormGuard</NavTitle>
-      <NavRight>
-        <Link iconIos="f7:menu" iconMd="material:menu" panelOpen="right" />
-      </NavRight>
-      <NavTitleLarge>StormGuard</NavTitleLarge>
-    </Navbar>
-    {/* Toolbar */}
-    <Toolbar bottom>
-      <Link>Left Link</Link>
-      <Link>Right Link</Link>
-    </Toolbar>
-    {/* Page content */}
-    <Block>
-      <p>Here is your blank Framework7 app. Let's see what we have here.</p>
-    </Block>
-    <BlockTitle>Navigation</BlockTitle>
-    <List strong inset dividersIos>
-      <ListItem link="/about/" title="About"/>
-      <ListItem link="/form/" title="Form"/>
-    </List>
+import DailyForecastList from '../../components/DailyForecastList';
+import ForecastDetail from '../../components/ForecastDetail';
+import WeatherBox from '../../components/WeatherBox';
+import { getSafeAreaClass } from '../../utils/f7utils';
+import './style.module.css';
+import useHomePageLogic from './useHomePageLogic';
 
-    <BlockTitle>Modals</BlockTitle>
-    <Block className="grid grid-cols-2 grid-gap">
-      <Button fill popupOpen="#my-popup">Popup</Button>
-      <Button fill loginScreenOpen="#my-login-screen">Login Screen</Button>
-    </Block>
+type HomePageProps = {
+    f7route: any;
+    f7router: any;
+};
 
-    <BlockTitle>Panels</BlockTitle>
-    <Block className="grid grid-cols-2 grid-gap">
-      <Button fill panelOpen="left">Left Panel</Button>
-      <Button fill panelOpen="right">Right Panel</Button>
-    </Block>
+const HomePage = (props: HomePageProps) => {
+    const { f7router } = props;
 
-    <List strong inset dividersIos>
-      <ListItem
-        title="Dynamic (Component) Route"
-        link="/dynamic-route/blog/45/post/125/?foo=bar#about"
-      />
-      <ListItem
-        title="Default Route (404)"
-        link="/load-something-that-doesnt-exist/"
-      />
-      <ListItem
-        title="Request Data & Load"
-        link="/request-and-load/user/123456/"
-      />
-    </List>
-  </Page>
-);
+    const {
+        weather,
+        dailyList,
+        selectedForecast,
+        sheetOpen,
+        handleSheetClosed,
+        handleSearchClick,
+        handleForecastClick,
+
+    } = useHomePageLogic(f7router);
+
+    return (
+        <Page name="home">
+            <PageContent className={getSafeAreaClass()}>
+                <div className="weather-wrapper">
+                    <div className="weather-head">
+                        {weather && <WeatherBox model={weather} onSearchClick={handleSearchClick} />}
+                    </div>
+
+
+                    {/* Weather List  */}
+                    <div className="weather-body">
+                        {dailyList?.length > 0 && <DailyForecastList forecastList={dailyList} onItemClick={handleForecastClick} />}
+                    </div>
+                </div>
+            </PageContent>
+
+
+            <Sheet
+                className="weather-sheet"
+                style={{ height: 'auto' }}
+                swipeToClose
+                push
+                backdrop
+                opened={sheetOpen}
+                onSheetClosed={handleSheetClosed}
+            >
+                <div className="swipe-handler"></div>
+
+                <Toolbar className="sheet-toolbar">
+                    <div className="left"><BlockTitle large>{selectedForecast?.getFormatedDay()}</BlockTitle></div>
+                    <div className="right">
+                        <Link sheetClose><Icon f7="xmark_circle_fill" /></Link>
+                    </div>
+                </Toolbar>
+
+                <PageContent>
+                    {selectedForecast && <ForecastDetail forecast={selectedForecast} />}
+                </PageContent>
+            </Sheet>
+
+
+        </Page>
+    );
+};
 export default HomePage;

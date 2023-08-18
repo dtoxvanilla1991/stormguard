@@ -2,7 +2,7 @@ import { Page, PageContent } from "framework7-react";
 import SearchBar from "../../components/SearchBar";
 import WeatherList from "../../components/WeatherList";
 import { getSafeAreaClass } from "../../utils/f7utils";
-import './style.scss';
+import './style.module.css';
 import useSearchLogic from "./useSearchLogic";
 
 type SearchPageProps = {

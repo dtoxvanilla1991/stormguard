@@ -1,7 +1,7 @@
 import { Page } from 'framework7-react';
 import useLoadWeatherList from '../../hooks/useWeatherList';
 
-import './style.scss';
+import './style.module.css';
 import useLoadingLogic from './useLoadingLogic';
 
 type LoadingProps = {
@@ -18,7 +18,7 @@ const LoadingScreen = (props: LoadingProps) => {
 
     return (
         <Page name="loading">
-            <div className='splash-container'>
+            <div className='loading-container'>
                 <img src='../../assets/stormguard_logo.svg' alt={"stormguard logo"}/>
                 <h1>StormGuard</h1>
             </div>

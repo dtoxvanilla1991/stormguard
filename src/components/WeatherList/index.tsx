@@ -1,6 +1,6 @@
 import { Button } from "framework7-react";
 import WeatherModel from "../../domain/WeatherModel";
-import './style.scss';
+import './style.module.css';
 
 type WeatherListProps = {
     weatherList?: WeatherModel[];

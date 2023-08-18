@@ -1,7 +1,7 @@
 import { Button, List, ListItem } from "framework7-react";
 import IWeatherModel from "../../domain/IWeatherModel";
 
-import './style.scss';
+import './style.module.css';
 
 type DailyForecastListProps = {
     forecastList: IWeatherModel[];
