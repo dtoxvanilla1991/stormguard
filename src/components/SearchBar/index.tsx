@@ -10,14 +10,14 @@ type SearchBarProps = {
 const SearchBar = (props: SearchBarProps) => {
   const { onSearch } = props;
 
-  const [searchText, setSearchText] = useState("");
+  const [searchText, setSearchText] = useState<string>("");
 
-  const callSearchHandler = () => {
+  const callSearchHandler = ():void => {
     onSearch(searchText);
     setSearchText("");
   };
 
-  const handleOnEnter = (e: { key: string }) => {
+  const handleOnEnter = (e: { key: string }):void => {
     if (e.key === "Enter") {
       callSearchHandler();
     }

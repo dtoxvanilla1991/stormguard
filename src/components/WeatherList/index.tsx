@@ -22,7 +22,11 @@ const WeatherList = (props: WeatherListProps) => {
             <div className="location-weather-item">
               <span>{weather.getName()}</span>
               <span>{weather.getTemperatureWithSymbol()}</span>{" "}
-              <img src={weather.getIcon()} />
+              <img
+                src={weather.getIcon()}
+                alt={"current weather icon"}
+                loading={"lazy"}
+              />
             </div>
           </Button>
         ))}

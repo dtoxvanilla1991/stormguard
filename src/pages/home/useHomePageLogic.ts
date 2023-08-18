@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react";
 import IWeatherModel from "../../domain/IWeatherModel";
 import useCurrentWeather from "../../hooks/useCurrentWeather";
+import WeatherModel from "../../domain/WeatherModel";
 
 const useHomePageLogic = (f7router: any) => {
-  const [sheetOpen, setSheetOpen] = useState(false);
+  const [sheetOpen, setSheetOpen] = useState<boolean>(false);
   const [selectedForecast, setSelectedForecast] = useState<
     IWeatherModel | undefined
   >(undefined);
 
-  const weather = useCurrentWeather();
+  const weather: WeatherModel | undefined = useCurrentWeather();
 
-  const dailyList = weather ? weather?.getDailyForecastList() : [];
+  const dailyList: IWeatherModel[] = weather
+    ? weather?.getDailyForecastList()
+    : [];
 
   useEffect(() => {
     if (!weather) {
