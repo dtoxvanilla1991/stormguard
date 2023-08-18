@@ -1,44 +1,43 @@
 .weather-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 20vh;
-    padding: 1rem 0;
-    background-color: rgba(77, 168, 209, 0.50);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 20vh;
+  padding: 1rem 0;
+  background-color: rgba(77, 168, 209, 0.5);
+  color: white;
+  text-transform: capitalize;
+
+  .btn-search {
     color: white;
-    text-transform: capitalize;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
 
-    .btn-search {
-        color: white;
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
+  .city-title {
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+
+  .weather-box-temp-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 55vw;
+
+    span {
+      font-size: 3rem;
+      font-weight: 200;
     }
+  }
 
-    .city-title {
-        font-size: 1.5rem;
-        font-weight: 400;
-    }
-
-    .weather-box-temp-wrapper {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        width: 55vw;
-
-        span {
-            font-size: 3rem;
-            font-weight: 200;
-        }
-    }
-
-    .weather-box-info {
-        display: flex;
-        flex-direction: row;
-        gap: 1rem;
-        padding-top: 1rem;
-    }
-
+  .weather-box-info {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding-top: 1rem;
+  }
 }

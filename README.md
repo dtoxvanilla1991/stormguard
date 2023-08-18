@@ -56,7 +56,6 @@ Frameworks/libraries/languages used:
 - [Redux store and toolkit](https://redux.js.org/); (meh, could have used Context API too)
 - [OpenWeatherMap API](https://openweathermap.org/api)
 
-
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- screenshots will go here once I finish the app -->
@@ -72,18 +71,20 @@ To run the app, install it locally using npm in your terminal:
 ```
 npm i
 ```
+
 or
+
 ```
 yarn
 ```
 
 ## NPM Scripts
 
-* 🔥 `start` - run development server
-* 🔧 `dev` - run development server
-* 🔧 `build` - build web app for production
-* 📱 `build-capacitor-ios` - build app and copy it to iOS capacitor project
-* 📱 `build-capacitor-android` - build app and copy it to Android capacitor project
+- 🔥 `start` - run development server
+- 🔧 `dev` - run development server
+- 🔧 `build` - build web app for production
+- 📱 `build-capacitor-ios` - build app and copy it to iOS capacitor project
+- 📱 `build-capacitor-android` - build app and copy it to Android capacitor project
 
 ## Vite
 
@@ -107,26 +108,26 @@ Rename `environment` file to `.env` , and set the API key for the OpenWeatherMap
 
 ## Implemented Features
 
-* City Input
-* Current Weather
-* Weather Forecast
-* Geolocation handling
-* Data Storage
-* A11y features (semantic HTML structure, ARIA attributes, ATL tags etc.)
-* Various optimizations (lazy loading, code splitting, tree shaking, etc.)
-* Offline First
+- City Input
+- Current Weather
+- Weather Forecast
+- Geolocation handling
+- Data Storage
+- A11y features (semantic HTML structure, ARIA attributes, ATL tags etc.)
+- Various optimizations (lazy loading, code splitting, tree shaking, etc.)
+- Offline First
 
 ## Ideas for Future Features
 
-* Add Storybook for better component development;
-* CI/CD using Github Actions;
-* Add unit tests using Jest, including edge cases;
-* Add e2e tests using Cypress and Argos Screenshots;
-* Add more graceful and "smart" error handling, providing the user with more information about the error and the development team with more information about the error;
-* Protect API keys with proxy endpoints, implemented between the OpenWeatherMap API and the app;
-* Using dependency injection for better code scalability & testability;
-* Logging & monitoring using FullStory;
-* Crash/Error reports using Sentry;
+- Add Storybook for better component development;
+- CI/CD using Github Actions;
+- Add unit tests using Jest, including edge cases;
+- Add e2e tests using Cypress and Argos Screenshots;
+- Add more graceful and "smart" error handling, providing the user with more information about the error and the development team with more information about the error;
+- Protect API keys with proxy endpoints, implemented between the OpenWeatherMap API and the app;
+- Using dependency injection for better code scalability & testability;
+- Logging & monitoring using FullStory;
+- Crash/Error reports using Sentry;
 
 Check out [official Capacitor documentation](https://capacitorjs.com) for more examples and usage examples.
 

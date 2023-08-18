@@ -1,14 +1,15 @@
-import { configureStore } from '@reduxjs/toolkit';
-import weatherReducer from '../weatherSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import weatherReducer from "../weatherSlice";
 
 const store = configureStore({
   reducer: {
     weathers: weatherReducer,
   },
 
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware({
-    serializableCheck: false
-  })
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 });
 
 export default store;

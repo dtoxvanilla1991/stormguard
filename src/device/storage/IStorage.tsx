@@ -1,13 +1,11 @@
 import IWeatherModel from "../../domain/IWeatherModel";
 
-
 export default interface IStorage {
+  saveWeathersAsync(list: IWeatherModel[]): Promise<void>;
 
-    saveWeathersAsync(list: IWeatherModel[]): Promise<void>;
+  loadWeathersAsync(): Promise<IWeatherModel[]>;
 
-    loadWeathersAsync(): Promise<IWeatherModel[]>;
+  saveCurrentIndexAsync(index: string): Promise<void>;
 
-    saveCurrentIndexAsync(index: string): Promise<void>;
-
-    loadCurrentIndexAsync(): Promise<string>;
+  loadCurrentIndexAsync(): Promise<string>;
 }

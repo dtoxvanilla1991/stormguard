@@ -1,8 +1,6 @@
 {
   "cwd": "/Users/dtoxvanilla/Development/StormGuard",
-  "type": [
-    "capacitor"
-  ],
+  "type": ["capacitor"],
   "name": "StormGuard",
   "framework": "react",
   "template": "single-view",
@@ -19,10 +17,7 @@
     "rtl": false,
     "darkTheme": true,
     "lightTheme": true,
-    "themes": [
-      "ios",
-      "md"
-    ],
+    "themes": ["ios", "md"],
     "components": [
       "dialog",
       "popup",
@@ -80,9 +75,6 @@
   },
   "pkg": "io.framework7.stormguard",
   "capacitor": {
-    "platforms": [
-      "android",
-      "ios"
-    ]
+    "platforms": ["android", "ios"]
   }
 }

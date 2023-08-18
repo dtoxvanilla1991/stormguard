@@ -1,17 +1,18 @@
 import WeatherModel from "../domain/WeatherModel";
 import { useAppSelector } from "./useStore";
 
-
 const useCurrentWeather = () => {
-    const { currentWeatherIdx, weathers } = useAppSelector(state => state.weathers);
+  const { currentWeatherIdx, weathers } = useAppSelector(
+    (state) => state.weathers,
+  );
 
-    let weather: WeatherModel | undefined;
+  let weather: WeatherModel | undefined;
 
-    if (weathers?.length > 0 && currentWeatherIdx > -1) {
-        weather = weathers[currentWeatherIdx];
-    }
+  if (weathers?.length > 0 && currentWeatherIdx > -1) {
+    weather = weathers[currentWeatherIdx];
+  }
 
-    return weather;
+  return weather;
 };
 
 export default useCurrentWeather;

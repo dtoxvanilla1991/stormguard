@@ -1,6 +1,5 @@
 import { GeolocationType } from "../../types";
 
-
 export default interface IGeolocation {
-    getCurrentLocationAsync(): Promise<GeolocationType | undefined>;
+  getCurrentLocationAsync(): Promise<GeolocationType | undefined>;
 }

@@ -3,47 +3,47 @@ import IGeolocation from "./IGeolocation";
 import { Geolocation } from "@capacitor/geolocation";
 
 export default class AppGeolocation implements IGeolocation {
+  constructor() {}
 
-    constructor() { }
+  async getCurrentLocationAsync(): Promise<GeolocationType | undefined> {
+    let hasPermission = false;
 
+    try {
+      const status = await Geolocation.checkPermissions();
+      if (
+        status.location === "granted" ||
+        status.coarseLocation === "granted"
+      ) {
+        hasPermission = true;
+      }
+    } catch (ex) {}
 
-    async getCurrentLocationAsync(): Promise<GeolocationType | undefined> {
+    if (!hasPermission) {
+      try {
+        const status = await Geolocation.requestPermissions();
 
-        let hasPermission = false;
-
-        try {
-            const status = await Geolocation.checkPermissions();
-            if (status.location === 'granted' || status.coarseLocation === 'granted') {
-                hasPermission = true;
-            }
-        } catch (ex) { }
-
-        if (!hasPermission) {
-            try {
-                const status = await Geolocation.requestPermissions();
-
-                if (status.location === 'granted' || status.coarseLocation === 'granted') {
-                    hasPermission = true;
-                }
-            } catch (ex) { }
+        if (
+          status.location === "granted" ||
+          status.coarseLocation === "granted"
+        ) {
+          hasPermission = true;
         }
-
-        let result: GeolocationType | undefined = undefined;
-
-        try {
-            const position = await Geolocation.getCurrentPosition();
-
-            if (position) {
-                result = {
-                    lon: position?.coords?.longitude,
-                    lat: position?.coords.latitude
-                };
-            }
-
-        } catch (ex) {}
-
-
-        return result;
+      } catch (ex) {}
     }
 
+    let result: GeolocationType | undefined = undefined;
+
+    try {
+      const position = await Geolocation.getCurrentPosition();
+
+      if (position) {
+        result = {
+          lon: position?.coords?.longitude,
+          lat: position?.coords.latitude,
+        };
+      }
+    } catch (ex) {}
+
+    return result;
+  }
 }

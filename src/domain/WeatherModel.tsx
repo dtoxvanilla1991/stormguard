@@ -3,80 +3,78 @@ import ForecastModel from "./ForecastModel";
 import IWeatherModel from "./IWeatherModel";
 import { ForecastWeatherType } from "./types";
 
-
 export default class WeatherModel implements IWeatherModel {
+  private readonly data: any;
+  private readonly dailyList: IWeatherModel[];
 
-    private readonly data: any;
-    private readonly dailyList: IWeatherModel[];
+  constructor(weatherData: any) {
+    this.data = weatherData;
+    this.dailyList = weatherData.daily?.map(
+      (forecast: any) => new ForecastModel(forecast),
+    );
+  }
 
-    constructor(weatherData: any) {
-        this.data = weatherData;
-        this.dailyList = weatherData.daily?.map((forecast: any) => new ForecastModel(forecast));
-    }
+  getId(): number {
+    return this.data?.id;
+  }
 
-    getId(): number {
-        return this.data?.id;
-    }
+  getName(): string {
+    return this.data?.name;
+  }
 
-    getName(): string {
-        return this.data?.name;
-    }
+  getDailyForecastList(): Array<IWeatherModel> {
+    return this.dailyList;
+  }
 
-    getDailyForecastList(): Array<IWeatherModel> {
-        return this.dailyList;
-    }
-
-
-    /*
+  /*
         Interface Implementations
     */
 
-    getDayNumber(): number {
-        const dt = this.data?.current?.dt;
-        return toDayNumber(dt);
-    }
+  getDayNumber(): number {
+    const dt = this.data?.current?.dt;
+    return toDayNumber(dt);
+  }
 
-    getDayName(): string {
-        const dt = this.data?.current?.dt;
-        return toDayName(dt)?.substring(0, 3);
-    }
+  getDayName(): string {
+    const dt = this.data?.current?.dt;
+    return toDayName(dt)?.substring(0, 3);
+  }
 
-    getRawData(): any {
-        return this.data;
-    }
+  getRawData(): any {
+    return this.data;
+  }
 
-    getFormatedDay(): string {
-        throw new Error("Method not implemented.");
-    }
+  getFormatedDay(): string {
+    throw new Error("Method not implemented.");
+  }
 
-    getTemperature(tempType: undefined | 'min' | 'max' = undefined): number {
-        return Math.round(this.data?.current?.temp);
-    }
+  getTemperature(tempType: undefined | "min" | "max" = undefined): number {
+    return Math.round(this.data?.current?.temp);
+  }
 
-    getTemperatureWithSymbol(): string {
-        return `${this.getTemperature()}°C`;
-    }
+  getTemperatureWithSymbol(): string {
+    return `${this.getTemperature()}°C`;
+  }
 
-    getHumidity(): number {
-        return this.data?.current?.humidity;
-    }
+  getHumidity(): number {
+    return this.data?.current?.humidity;
+  }
 
-    getDescription(): string {
-        return this.data?.current?.weather[0]?.description;
-    }
+  getDescription(): string {
+    return this.data?.current?.weather[0]?.description;
+  }
 
-    getIcon(): string {
-        const icon = this.data?.current?.weather[0]?.icon;
-        const path = `https://openweathermap.org/img/wn/${icon}@2x.png`;
-        return path;
-    }
+  getIcon(): string {
+    const icon = this.data?.current?.weather[0]?.icon;
+    const path = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+    return path;
+  }
 
-    getWeather(): ForecastWeatherType {
-        return this.data?.current?.weather;
-    }
+  getWeather(): ForecastWeatherType {
+    return this.data?.current?.weather;
+  }
 
-    getWindSpeed(): number {
-        return this.data?.current?.wind_speed;
-    }
-
+  getWindSpeed(): number {
+    return this.data?.current?.wind_speed;
+  }
 }
