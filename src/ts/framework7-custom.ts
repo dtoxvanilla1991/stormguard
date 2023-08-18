@@ -47,7 +47,6 @@ import Skeleton from 'framework7/components/skeleton';
 import ColorPicker from 'framework7/components/color-picker';
 import Treeview from 'framework7/components/treeview';
 import TextEditor from 'framework7/components/text-editor';
-import Breadcrumbs from 'framework7/components/breadcrumbs';
 import Typography from 'framework7/components/typography';
 
 Framework7.use([
@@ -98,7 +97,6 @@ Framework7.use([
   ColorPicker,
   Treeview,
   TextEditor,
-  Breadcrumbs,
   Typography
 ]);
 

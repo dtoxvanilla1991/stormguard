@@ -1,10 +1,10 @@
-var capacitorApp = {
+const capacitorApp = {
   f7: null,
   /*
   This method hides splashscreen after 2 seconds
   */
   handleSplashscreen: function () {
-    var f7 = capacitorApp.f7;
+    const f7 = capacitorApp.f7;
     if (!window.Capacitor) return;
     setTimeout(() => {
       if (window.Capacitor.Plugins && window.Capacitor.Plugins.SplashScreen) {
@@ -18,7 +18,7 @@ var capacitorApp = {
   In case there is a current view with navigation history, it will go back instead.
   */
   handleAndroidBackButton: function () {
-    var f7 = capacitorApp.f7;
+    const f7 = capacitorApp.f7;
     const $ = f7.$;
     if (!window.Capacitor || !window.Capacitor.Plugins.App) return;
     window.Capacitor.Plugins.App.addListener(
@@ -86,10 +86,10 @@ var capacitorApp = {
     - hides keyboard accessory bar for all inputs except where it required
   */
   handleKeyboard: function () {
-    var f7 = capacitorApp.f7;
+    const f7 = capacitorApp.f7;
     if (!window.Capacitor || !window.Capacitor.Plugins.Keyboard) return;
-    var $ = f7.$;
-    var Keyboard = window.Capacitor.Plugins.Keyboard;
+    const $ = f7.$;
+    const Keyboard = window.Capacitor.Plugins.Keyboard;
     if (!Keyboard) return;
     Keyboard.setResizeMode({ mode: 'native' });
     Keyboard.setScroll({ isDisabled: true });
