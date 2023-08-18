@@ -1,7 +1,7 @@
 import { Page } from 'framework7-react';
 import useLoadWeatherList from '../../hooks/useWeatherList';
 
-import './style.module.css';
+import './style.css';
 import useLoadingLogic from './useLoadingLogic';
 
 type LoadingProps = {

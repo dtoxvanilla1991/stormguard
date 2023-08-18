@@ -16,18 +16,20 @@ export default class OpenWeatherApi implements WeatherApi {
     private readonly PARAM_UNITS_METRIC = `units=METRIC`;
     private readonly PARAM_EXCLUDE = `exclude=minutely,hourly`;
 
-    constructor(apiKey: string) {
+    constructor(apiKey: string | undefined) {
         this.API_KEY = apiKey;
         this.PARAM_APP_ID = `appid=${apiKey}`;
     }
 
     async byLocationName(locationName: string): Promise<any> {
 
+        if(this.API_KEY === undefined) throw new Error('API KEY is undefined. Please provide it in .env file');
+
         const currentWeatherUrl = `${this.BASE}${this.CURRENT_WEATHER}?${this.PARAM_UNITS_METRIC}&q=${locationName}&${this.PARAM_APP_ID}`;
 
         const currentWeather = (await axios.get(currentWeatherUrl)).data;
-
         const { lat, lon } = currentWeather.coord;
+        console.log(lat,lon)
 
         const dailyForecastUrl = `${this.BASE}${this.ONE_CALL}?${this.PARAM_UNITS_METRIC}&${this.PARAM_EXCLUDE}&lon=${lon}&lat=${lat}&${this.PARAM_APP_ID}`;
 
@@ -45,6 +47,9 @@ export default class OpenWeatherApi implements WeatherApi {
     }
 
     async byGeolocation(lat: number, lon: number): Promise<any> {
+
+        if(this.API_KEY === undefined) throw new Error('API KEY is undefined. Please provide it in .env file');
+
 
         const currentWeatherUrl = `${this.BASE}${this.CURRENT_WEATHER}?${this.PARAM_UNITS_METRIC}&lon=${lon}&lat=${lat}&${this.PARAM_APP_ID}`;
 
