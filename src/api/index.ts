@@ -28,7 +28,6 @@ export default class OpenWeatherApi implements WeatherApi {
 
     const currentWeather = (await axios.get(currentWeatherUrl)).data;
     const { lat, lon } = currentWeather.coord;
-    console.log(lat, lon);
 
     const dailyForecastUrl = `${this.BASE}${this.ONE_CALL}?${this.PARAM_UNITS_METRIC}&${this.PARAM_EXCLUDE}&lon=${lon}&lat=${lat}&${this.PARAM_APP_ID}`;
 
@@ -45,7 +44,6 @@ export default class OpenWeatherApi implements WeatherApi {
   }
 
   async byGeolocation(lat: number, lon: number): Promise<any> {
-    console.log(lat, lon);
     if (this.API_KEY === undefined)
       throw new Error("API KEY is undefined. Please provide it in .env file");
 

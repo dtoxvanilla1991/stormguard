@@ -1,11 +1,11 @@
 .weather-box {
   display: flex;
   flex-direction: column;
+  background-size: cover;
   justify-content: center;
   align-items: center;
   min-height: 20vh;
   padding: 1rem 0;
-  background-color: rgba(77, 168, 209, 0.5);
   color: white;
   text-transform: capitalize;
 
