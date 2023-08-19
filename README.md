@@ -63,6 +63,8 @@ Frameworks/libraries/languages used:
 - [Capacitor](https://capacitorjs.com/)
 - [Redux store and toolkit](https://redux.js.org/); (meh, could have used Context API too)
 - [OpenWeatherMap API](https://openweathermap.org/api)
+- [Vite](https://vitejs.dev/)
+- [Prettier](https://prettier.io/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -133,6 +135,7 @@ Rename `environment` file to `.env` , and set the API key for the OpenWeatherMap
 - Add e2e tests using Cypress and Argos Screenshots;
 - Add more graceful and "smart" error handling, providing the user with more information about the error and the development team with more information about the error;
 - Protect API keys with proxy endpoints, implemented between the OpenWeatherMap API and the app;
+- Move assets to Cloudinary (that hosts with on AWS and optimizes them for all devices) for maximum performance;
 - Using dependency injection for better code scalability & testability;
 - Logging & monitoring using FullStory;
 - Crash/Error reports using Sentry;
