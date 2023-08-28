@@ -47,8 +47,8 @@ Specs: StormGuard is offline-first cross-platform mobile application that can fe
 
 ## Screenshots of the app
 
-<img width="313" alt="image" src="https://github.com/dtoxvanilla1991/stormguard/assets/73205087/fe5285f5-b7b3-4c98-9376-ff7d16b7b62f">
-<img width="313" alt="image" src="https://github.com/dtoxvanilla1991/stormguard/assets/73205087/8f3c0b11-f1e4-40e6-8358-c0aa006e6a14">
+<img width="307" alt="image" src="https://github.com/dtoxvanilla1991/stormguard/assets/73205087/25afea4b-ee73-485b-b5cd-b765e30f09ce">
+<img width="308" alt="image" src="https://github.com/dtoxvanilla1991/stormguard/assets/73205087/b25e60ff-7425-452e-8d8b-45e6dd557194">
 <img width="311" alt="image" src="https://github.com/dtoxvanilla1991/stormguard/assets/73205087/f683395c-02dc-424c-8f96-73fc7e89375d">
 <img width="311" alt="image" src="https://github.com/dtoxvanilla1991/stormguard/assets/73205087/05dc9e32-cd9a-4485-b8a7-5bb365dbdab1">
 
