@@ -7,9 +7,14 @@ import { useCallback } from "react";
 type WeatherBoxProps = {
   model: WeatherModel;
   onSearchClick: () => void;
+  onGoHomeClick: () => void;
 };
 
-const WeatherBox = ({ model, onSearchClick }: WeatherBoxProps) => {
+const WeatherBox = ({
+  model,
+  onSearchClick,
+  onGoHomeClick,
+}: WeatherBoxProps) => {
   const temperatureLevel = useCallback((): string => {
     if (model.getTemperature() > 20) {
       return "yellow";
@@ -52,6 +57,9 @@ const WeatherBox = ({ model, onSearchClick }: WeatherBoxProps) => {
     >
       <Button className="btn-search" onClick={() => onSearchClick()}>
         <Icon f7="search" />
+      </Button>
+      <Button className="btn-home" onClick={() => onGoHomeClick()}>
+        <Icon material="home" />
       </Button>
       <span className="city-title">{model?.getName()}</span>
       <div className="weather-box-temp-wrapper">

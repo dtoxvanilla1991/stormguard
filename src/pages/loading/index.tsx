@@ -27,6 +27,9 @@ const LoadingScreen = (props: LoadingProps) => {
           loading={"lazy"}
         />
         <h2>StormGuard</h2>
+        <p className={"helper-message"}>
+          Getting freshest weather for you. Hold on...
+        </p>
       </picture>
     </Page>
   );

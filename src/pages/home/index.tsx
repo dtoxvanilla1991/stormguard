@@ -31,7 +31,8 @@ const HomePage = (props: HomePageProps) => {
     selectedForecast: IWeatherModel | undefined;
     sheetOpen: boolean;
     handleSheetClosed: () => void;
-    handleSearchClick: () => any;
+    handleSearchClick: () => void;
+    handleGoHomeClick: () => void;
     handleForecastClick: (idx: number) => void;
   }
 
@@ -43,6 +44,7 @@ const HomePage = (props: HomePageProps) => {
     handleSheetClosed,
     handleSearchClick,
     handleForecastClick,
+    handleGoHomeClick,
   }: HomePageLogic = useHomePageLogic(f7router);
 
   return (
@@ -51,7 +53,11 @@ const HomePage = (props: HomePageProps) => {
         <div className="weather-wrapper">
           <div className="weather-head">
             {weather && (
-              <WeatherBox model={weather} onSearchClick={handleSearchClick} />
+              <WeatherBox
+                model={weather}
+                onSearchClick={handleSearchClick}
+                onGoHomeClick={handleGoHomeClick}
+              />
             )}
           </div>
 

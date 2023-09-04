@@ -28,9 +28,11 @@ const useHomePageLogic = (f7router: any) => {
     }
   };
 
-  const handleSheetClosed = () => setSheetOpen(false);
+  const handleSheetClosed = (): void => setSheetOpen(false);
 
-  const handleSearchClick = () => f7router.navigate("/search/");
+  const handleSearchClick = (): void => f7router.navigate("/search/");
+
+  const handleGoHomeClick = (): void => f7router.navigate("/");
 
   return {
     sheetOpen,
@@ -40,6 +42,7 @@ const useHomePageLogic = (f7router: any) => {
     handleSheetClosed,
     handleSearchClick,
     handleForecastClick,
+    handleGoHomeClick,
   };
 };
 
