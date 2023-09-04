@@ -11,7 +11,7 @@ const useLoadWeatherList = (loadImmediately = true) => {
   const dispatch = useAppDispatch();
 
   const loadLocalList = () => dispatch(loadLocalWeathers());
-
+  //loading weather list from local storage
   if (loadImmediately) {
     useEffect(() => {
       loadLocalList();

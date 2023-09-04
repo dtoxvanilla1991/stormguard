@@ -79,9 +79,15 @@ const weatherSlice = createSlice({
       }
 
       try {
+        //loading weather to local storage
         localStorage.saveWeathersAsync(state.weathers);
         localStorage.saveCurrentIndexAsync(state.currentWeatherIdx);
-      } catch (ex) {}
+      } catch (ex) {
+        console.error(
+          "Could not save weather data locally for faster loads",
+          ex,
+        );
+      }
     };
 
     const fetchFailed = (state: any, action: any) => {
