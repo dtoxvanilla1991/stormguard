@@ -35,7 +35,7 @@ export default class AppGeolocation implements IGeolocation {
 
     try {
       const position = await Geolocation.getCurrentPosition();
-
+      console.log(position);
       if (position) {
         result = {
           lon: position?.coords?.longitude,
