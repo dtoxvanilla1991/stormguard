@@ -21,7 +21,7 @@ const useHomePageLogic = (f7router: any) => {
     }
   }, []);
 
-  const handleForecastClick = (idx: number) => {
+  const handleForecastClick = (idx: number): void => {
     if (dailyList?.length > 0) {
       setSelectedForecast(dailyList[idx]);
       setSheetOpen(true);
