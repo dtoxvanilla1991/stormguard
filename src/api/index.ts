@@ -39,8 +39,8 @@ export default class OpenWeatherApi implements WeatherApi {
       ...dailyForecast,
       ...currentWeather,
     };
-
-    return mockData;
+    // for testing
+    // return mockData;
   }
 
   async byGeolocation(lat: number, lon: number): Promise<any> {
@@ -61,8 +61,8 @@ export default class OpenWeatherApi implements WeatherApi {
       ...dailyForecast,
       ...currentWeather,
     };
-
-    return mockData;
+    // for testing
+    // return mockData;
   }
 }
 

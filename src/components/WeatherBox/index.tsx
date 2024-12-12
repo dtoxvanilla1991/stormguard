@@ -32,7 +32,7 @@ const WeatherBox = ({
       return "linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url(/assets/light_clouds.jpg)";
     } else if (model.getDescription().indexOf("clouds") !== -1) {
       return "linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url(/assets/heavy_clouds.jpg)";
-    } else if (model.getDescription().indexOf("rain") !== -1) {
+    } else if ((model.getDescription().indexOf("rain") || model.getDescription().indexOf("moderate rain")) !== -1) {
       return "linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url(/assets/rain.jpg)";
     } else if (model.getDescription().indexOf("snow") !== -1) {
       return "linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url(/assets/snow.jpg)";
